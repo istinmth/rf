@@ -1,0 +1,172 @@
+<html>
+<div id="cookieNotice" class="cookie-notice">
+    <h2>&#x1F36A; Egy kis sütike</h2>
+    <p>Mi nagyon szeretjük a süteményt, ha te is szereted, mindenképp fogadj el tőlünk egyet-kettőt!</p>
+        <a href="#" class="cookie-link">Van ám szabályzatunk is, ha azt keresnéd.</a>
+
+    <div class="cookie-actions">
+        <button id="managePreferences" class="manage-btn">Szerkesztem a preferenciáimat</button>
+        <button id="acceptCookies" class="accept-btn">Ide vele</button>
+    </div>
+</div>
+
+<!-- CSS Styles -->
+<style>
+.cookie-notice {
+    position: fixed;
+    max-width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #f3f4f6;
+    border: 0.7px solid black;
+    border-radius: 16px;
+    bottom: 40px;
+    left: 48px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.cookie-notice h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2a2a2a;
+    margin: 0;
+}
+
+.cookie-notice p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #2a2a2a;
+}
+
+.cookie-link {
+    color: #5a7f94;
+    text-decoration: none;
+}
+
+.cookie-link:hover {
+    text-decoration: underline;
+}
+
+.cookie-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    gap: 16px;
+}
+
+.manage-btn {
+    font-size: 12px;
+    color: #2a2a2a;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.manage-btn:hover {
+    color: #5a7f94;
+}
+
+.accept-btn {
+    font-size: 12px;
+    background-color: #2a2a2a;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.accept-btn:hover {
+    background-color: #5a7f94;
+}
+
+/* Dark mode styles - if your DNN site supports dark mode */
+@media (prefers-color-scheme: dark) {
+    .cookie-notice {
+        background-color: #2a2a2a;
+        border-color: #e0b878;
+    }
+
+    .cookie-notice h2 {
+        color: #e0b878;
+    }
+
+    .cookie-notice p {
+        color: #d6c5b5;
+    }
+
+    .manage-btn {
+        color: #d6c5b5;
+    }
+
+    .manage-btn:hover {
+        color: #5a7f94;
+    }
+}
+</style>
+
+<!-- JavaScript for Cookie Notice -->
+<script>
+(function() {
+    // Function to check if cookie exists
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    // Function to set cookie
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
+    // Function to show the cookie notice
+    function showCookieNotice() {
+        document.getElementById('cookieNotice').style.display = 'block';
+    }
+
+    // Function to hide the cookie notice
+    function hideCookieNotice() {
+        document.getElementById('cookieNotice').style.display = 'none';
+    }
+
+    // Check if user has already accepted cookies
+    if (!getCookie('cookiesAccepted')) {
+        // If not, show the cookie notice
+        window.addEventListener('load', function() {
+            setTimeout(showCookieNotice, 1000); // Show after 1 second
+        });
+    }
+
+    // Accept button event listener
+    document.getElementById('acceptCookies').addEventListener('click', function() {
+        setCookie('cookiesAccepted', 'true', 365); // Set cookie for 1 year
+        hideCookieNotice();
+    });
+
+    // Manage preferences button event listener
+    document.getElementById('managePreferences').addEventListener('click', function() {
+        // Add your code to show preferences management interface
+        console.log('Manage preferences clicked');
+        // You could redirect to a preferences page or show another modal
+    });
+})();
+</script>
+</html>

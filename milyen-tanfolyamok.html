@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Wrapper to scope all styles and prevent external CSS interference */
+        #ital-kurzusok-component {
+            all: initial;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            display: block !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Reset all elements inside our component */
+        #ital-kurzusok-component * {
+            all: unset;
+            display: revert;
+            box-sizing: border-box !important;
+        }
+
+        #ital-kurzusok-component h1,
+        #ital-kurzusok-component p,
+        #ital-kurzusok-component div,
+        #ital-kurzusok-component span,
+        #ital-kurzusok-component a,
+        #ital-kurzusok-component svg {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            background: none !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        }
+
+        /* Custom color variables */
+        #ital-kurzusok-component {
+            --primary: #752f2f !important;
+            --secondary: #5a7f94 !important;
+            --light-bg: #EFEDE7 !important;
+            --accent: #e0b878 !important;
+            --neutral: #d6c5b5 !important;
+            --dark: #2a2a2a !important;
+        }
+
+        /* Component container */
+        #ital-kurzusok-component .component-container {
+            background-color: var(--light-bg) !important;
+            padding: 2.5rem 1.5rem !important;
+            width: 100% !important;
+            display: block !important;
+        }
+
+        #ital-kurzusok-component .container {
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 1.5rem !important;
+            width: auto !important;
+            display: block !important;
+        }
+
+        /* Headings */
+        #ital-kurzusok-component .heading-title {
+            font-size: 1.875rem !important;
+            font-weight: 600 !important;
+            color: var(--dark) !important;
+            line-height: 1.2 !important;
+            margin-bottom: 1rem !important;
+            display: block !important;
+        }
+
+        #ital-kurzusok-component .heading-title span {
+            text-decoration: underline !important;
+            text-decoration-color: var(--secondary) !important;
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 4px !important;
+        }
+
+        /* Description text */
+        #ital-kurzusok-component .description {
+            margin-top: 1.25rem !important;
+            color: var(--dark) !important;
+            max-width: 800px !important;
+            font-size: 1rem !important;
+            line-height: 1.5 !important;
+            display: block !important;
+        }
+
+        /* Card grid */
+        #ital-kurzusok-component .card-grid {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+            margin-top: 2.5rem !important;
+            width: 100% !important;
+        }
+
+        /* Card styling */
+        #ital-kurzusok-component .card {
+            border: 2px solid var(--secondary) !important;
+            border-radius: 0.75rem !important;
+            padding: 2rem !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            display: block !important;
+            background-color: white !important;
+        }
+
+        #ital-kurzusok-component .card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        #ital-kurzusok-component .card-icon {
+            display: inline-block !important;
+            color: var(--primary) !important;
+            margin-bottom: 1rem !important;
+            width: 32px !important;
+            height: 32px !important;
+        }
+
+        #ital-kurzusok-component .card-icon svg {
+            width: 32px !important;
+            height: 32px !important;
+            fill: none !important;
+            stroke: currentColor !important;
+            stroke-width: 2 !important;
+            stroke-linecap: round !important;
+            stroke-linejoin: round !important;
+        }
+
+        #ital-kurzusok-component .card-title {
+            font-size: 1.25rem !important;
+            font-weight: 600 !important;
+            color: var(--primary) !important;
+            margin-bottom: 0.75rem !important;
+            display: block !important;
+        }
+
+        #ital-kurzusok-component .card-text {
+            color: var(--dark) !important;
+            margin-bottom: 1.5rem !important;
+            line-height: 1.6 !important;
+            display: block !important;
+            font-size: 0.9rem !important;
+        }
+
+        #ital-kurzusok-component .card-link {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 0.5rem !important;
+            background-color: var(--accent) !important;
+            color: var(--dark) !important;
+            border-radius: 9999px !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+        }
+
+        #ital-kurzusok-component .card-link:hover {
+            background-color: var(--primary) !important;
+            color: var(--light-bg) !important;
+        }
+
+        #ital-kurzusok-component .card-link svg {
+            width: 1.5rem !important;
+            height: 1.5rem !important;
+            fill: none !important;
+            stroke: currentColor !important;
+            stroke-width: 2 !important;
+            stroke-linecap: round !important;
+            stroke-linejoin: round !important;
+        }
+
+        /* Explicitly set line break styling */
+        #ital-kurzusok-component br {
+            display: block !important;
+            content: "" !important;
+            margin-top: 0.5rem !important;
+        }
+
+        /* Responsive styles - with !important on all properties */
+        @media (min-width: 768px) {
+            #ital-kurzusok-component .card-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            #ital-kurzusok-component .heading-title {
+                font-size: 2.25rem !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #ital-kurzusok-component .card-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="ital-kurzusok-component">
+        <section class="component-container" id="teamComponentSection">
+            <div class="container">
+                <h1 class="heading-title">Ezek a <br> legnépszerűbb <span>képzéseink</span></h1>
+
+                <p class="description">
+                    Fedezd fel a sörfőzés alapjait, vagy mélyedj el a haladó technikákban! Keverj koktélt, légy profi mixer vagy csak készítsd el életed első házipálinkáját!
+                </p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <span class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M17 11h1a2 2 0 0 1 0 4h-1"></path>
+                                <path d="M9 12v6"></path>
+                                <path d="M13 12v6"></path>
+                                <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"></path>
+                                <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"></path>
+                            </svg>
+                        </span>
+
+                        <h1 class="card-title">Sörfőzés</h1>
+
+                        <p class="card-text">
+                            Alapok: Ismerkedj meg a sörkészítéshez szükséges alapanyagokkal. <br>
+                            Haladó szint: Tanuld meg a különböző sörtípusok készítését, mint például IPA, Pilsner, Porter, Stout és sok más!<br>
+                            Praktikus tippek: Hogyan válassz megfelelő eszközöket és hogyan érd el a legjobb ízeket.
+                        </p>
+
+                        <a href="#" class="card-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <span class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M8 22h8"></path>
+                                <path d="M12 11v11"></path>
+                                <path d="m19 3-7 8-7-8Z"></path>
+                                <path d="M2 3h20"></path>
+                                <path d="M13 7.5a1.5 1.5 0 0 1-2 1.5 1.5 1.5 0 0 1-2-1.5 1.5 1.5 0 0 1 2-1.5 1.5 1.5 0 0 1 2 1.5Z"></path>
+                            </svg>
+                        </span>
+
+                        <h1 class="card-title">Koktélkészítés</h1>
+
+                        <p class="card-text">
+                            Alapok: A klasszikus koktélok, mint a Mojito, Margarita, Daiquiri és mások. <br>
+                            Haladó technikák: Különleges koktélok készítése, és a legújabb trendek alkalmazása.<br>
+                            Titkok: Hogyan kombinálj különböző alkoholokat, szirupokat és fűszereket egy tökéletes ital elkészítéséhez.<br>
+                        </p>
+
+                        <a href="#" class="card-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <span class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M6.25 10H17.75"></path>
+                                <path d="M9.26556 20H14.7344C15.7431 20 16.5939 19.2489 16.719 18.2481L18.3595 5.12403C18.4341 4.52718 17.9687 4 17.3672 4H6.63278C6.03128 4 5.5659 4.52718 5.6405 5.12403L7.28101 18.2481C7.40612 19.2489 8.25692 20 9.26556 20Z"></path>
+                            </svg>
+                        </span>
+
+                        <h1 class="card-title">Pálinka-lepárlás</h1>
+
+                        <p class="card-text">
+                            Alapok: A jó pálinka alapja a minőségi gyümölcs és a megfelelő erjesztés. <br>
+                            Haladó technikák: Igazán tökéletes párlathoz fontos a hőmérséklet pontos szabályozása és a lepárlás időzítése. <br>
+                            Titkok: A pálinka érlelésének titka a megfelelő hordó kiválasztása és a türelem az aromák kifejlődéséhez. <br>
+                        </p>
+
+                        <a href="#" class="card-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript">
+        (function() {
+            // Self-executing function to avoid global scope pollution
+            function initItalKurzusokComponent() {
+                // DNN specific code could go here if needed
+                if (typeof $.ServicesFramework !== 'undefined') {
+                    console.log('DNN Services Framework detected');
+                }
+
+                // No need for extra initialization with the simplified component
+            }
+
+            // Initialize component when DOM is ready
+            if (typeof jQuery !== 'undefined') {
+                jQuery(document).ready(initItalKurzusokComponent);
+            } else {
+                document.addEventListener('DOMContentLoaded', initItalKurzusokComponent);
+            }
+        })();
+    </script>
+</body>
+</html>

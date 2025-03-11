@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Team</title>
+    <style>
+        /* Reset styles to prevent DNN interference */
+        #executive-team-container * {
+            all: unset;
+            display: revert;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Spectral, sans-serif;
+            color: #2a2a2a;
+        }
+
+        /* Custom color palette */
+        :root {
+            --primary: #752f2f;
+            --secondary: #5a7f94;
+            --tertiary: #d6c5b5;
+            --dark: #2a2a2a;
+            --accent: #e0b878;
+            --light: #EFEDE7;
+        }
+
+        #executive-team-container {
+            background-color: var(--light);
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #executive-team-container .container {
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        #executive-team-container h1 {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        #executive-team-container h1 span {
+            color: var(--primary);
+        }
+
+        #executive-team-container p.description {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-align: center;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        #executive-team-container .team-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
+
+        #executive-team-container .team-card {
+            padding: 30px;
+            background-color: white;
+            border: 1px solid var(--tertiary);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        #executive-team-container .team-card:hover {
+            border-color: transparent;
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        #executive-team-container .team-card-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #executive-team-container .team-member-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #executive-team-container .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--tertiary);
+            margin-bottom: 15px;
+        }
+
+        #executive-team-container .team-card:hover .profile-img {
+            border-color: var(--accent);
+        }
+
+        #executive-team-container .member-name {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        #executive-team-container .team-card:hover .member-name {
+            color: white;
+        }
+
+        #executive-team-container .member-position {
+            font-size: 16px;
+            color: var(--secondary);
+            text-transform: capitalize;
+        }
+
+        #executive-team-container .team-card:hover .member-position {
+            color: var(--light);
+        }
+
+        #executive-team-container .member-bio {
+            margin: 15px 0;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        #executive-team-container .team-card:hover .member-bio {
+            color: white;
+        }
+
+        #executive-team-container .catchphrase {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #executive-team-container .team-card:hover .catchphrase {
+            color: var(--light);
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            #executive-team-container .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #executive-team-container .team-member-header {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+            }
+
+            #executive-team-container .profile-img {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+
+            /* Special styling for the fifth team member */
+            #executive-team-container .team-grid > div:last-child {
+                margin-top: 20px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #executive-team-container h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="executive-team-container">
+        <div class="container">
+            <h1>Ez a gütyüli gang <span>ez a mi kis csapatunk</span></h1>
+
+            <p class="description">
+Amikor csak tudunk, az utcákon csapatunk. Lefőztünk egy adag sört, volt bennünk ennyi bátorság,
+Viszont itt ha keménykedsz, gyorsan szedd a sátorfád.
+Testvérek vagyunk, ami ma már ritka,
+Őszinteség, becsület, ennek ez a titka.            </p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-card-content">
+                        <div class="team-member-header">
+                            <img class="profile-img" src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_c66e54b24b764ee28a3e3d0667154381/static/light/3.0" alt="Arthur Melo">
+                            <div>
+                                <h2 class="member-name">Csoki</h2>
+                                <p class="member-position">Alapító, cégtulajdonos</p>
+                            </div>
+                        </div>
+
+                        <p class="member-bio">Csoki a jövőképünket tervezi, több mint 15 éves tapasztalattal a stratégia és márkaépítés területén.</p>
+
+                        <p class="catchphrase">"A sörfőzés nem csak arról szól, hogy hogyan néz ki, hanem arról is, hogy hogyan finom-e."</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-content">
+                        <div class="team-member-header">
+                            <img class="profile-img" src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_0dcd7b3a3f7e48ffb8255b6336dffa07/static/light/3.0" alt="Amelia Anderson">
+                            <div>
+                                <h2 class="member-name">Marica</h2>
+                                <p class="member-position">Lead Designer</p>
+                            </div>
+                        </div>
+
+                        <p class="member-bio">A hatékony megoldások és formai kiválóság iránt éles szemmel, Marica szenvedéllyel és precizitással vezeti tervezői csapatunkat.</p>
+
+                        <p class="catchphrase">"Az egyszerűség arany középút a túl kevés és a túl sok között."</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-content">
+                        <div class="team-member-header">
+                            <img class="profile-img" src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_9699f9e151014b0d8fec5633a2a64ba4/static/light/3.0" alt="Olivia Wathan">
+                            <div>
+                                <h2 class="member-name">Szonja</h2>
+                                <p class="member-position">Marketingfőnök</p>
+                            </div>
+                        </div>
+
+                        <p class="member-bio">Szonja csodásan bánik a szavakkal, melynek köszönhetően évek óta az ország legnépszerűbb reklámkapmányát tudhatja magáénak a Csaposkola.</p>
+
+                        <p class="catchphrase">"A vásárlási döntések kilencvenöt százaléka tudat alatt születik."</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-content">
+                        <div class="team-member-header">
+                            <img class="profile-img" src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_20ce308217bd4d9dbbfaafbdb48cd907/static/light/3.0" alt="John Doe">
+                            <div>
+                                <h2 class="member-name">Tomi</h2>
+                                <p class="member-position">Content Owner</p>
+                            </div>
+                        </div>
+
+                        <p class="member-bio">Tomi sokoldalú problémamegoldóként, áthidalja a tartalom és igény közötti szakadékot, soha nem fáradva foglalkozik a termékeinkkel és szolgáltatásainkkal.</p>
+
+                        <p class="catchphrase">"Az a kép picit ferde, nem?"</p>
+                    </div>
+                </div>
+
+                <!-- Fifth team member in its own row -->
+                <div class="team-card" style="grid-column: 1 / -1; max-width: 500px; margin: 0 auto;">
+                    <div class="team-card-content">
+                        <div class="team-member-header">
+                            <img class="profile-img" src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_00847506eb9a4364bd76b9ebf9eac7fa/static/light/3.0" alt="Nagy Katalin">
+                            <div>
+                                <h2 class="member-name">Isti</h2>
+                                <p class="member-position">Vezető fejlesztő</p>
+                            </div>
+                        </div>
+
+                        <p class="member-bio">Több évtizedes szoftverfejlesztői tapasztalatát Isti az informatikai rendszereink és a weboldalunk technikai fenntartására fordítja - inkább több, mint kevesebb sikerrel.</p>
+
+                        <p class="catchphrase">"A legjobb kód önmagát írja"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // If additional JavaScript functionality is needed, it would go here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure isolation from DNN's JavaScript
+            // This script runs in its own scope and doesn't interfere with other scripts
+
+            const cards = document.querySelectorAll('#executive-team-container .team-card');
+
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // You could add functionality here, like expanding bio details
+                    // or triggering a modal with more information
+                    console.log('Card clicked: ' + this.querySelector('.member-name').textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
